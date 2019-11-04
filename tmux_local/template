@@ -1,0 +1,8 @@
+#!/usr/bin/tmux
+new-window
+rename-window win_name
+
+split-window -v
+send-keys -t 0 "$cmd to open new prod window" enter
+send-keys -t 1 "$cmd to open new prod window" enter
+set-window-option synchronize-panes on

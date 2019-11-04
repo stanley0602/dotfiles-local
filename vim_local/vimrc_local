@@ -1,0 +1,18 @@
+" .vimrc_local
+" Local configuration for vim
+
+" Clang format wrapper
+" set font tyep and size
+if has("gui_running")
+  if has("gui_gtk2")
+     set guifont=Monospace\ 14
+  elseif has("gui_macvim")
+     set guifont=Menlo\ Regular:h14
+  elseif has("gui_win32")
+     set guifont=Consolas:h11:cANSI
+  endif
+endif
+
+
+
+let g:DoxygenToolkit_authorName="stanley06 <stanleyli0602@gmail.com>"

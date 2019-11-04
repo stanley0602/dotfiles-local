@@ -1,0 +1,5 @@
+# example setup
+Host github
+    User git
+    Hostname github.com
+    IdentityFile /home/name/.ssh/id_rsa

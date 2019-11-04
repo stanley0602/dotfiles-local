@@ -1,2 +1,3 @@
-# dotfiles-local
-Customized .
+Custmoized Dotfiles
+- To override major dotfiles
+- Customized as personal/work laptop

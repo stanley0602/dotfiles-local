@@ -1,0 +1,20 @@
+- clean: ['~']
+
+- link:
+    # Advanced format:
+    # ~/.foo:
+    #     path: foo
+    #     create: false
+    #     relink: false
+    #     force: false
+
+    ~/.gitconfig_local: git_local/gitconfig_local
+    ~/.tmux_local: tmux_local/
+    ~/.vimrc_local: vim_local
+    ~/.bash_local: bash_local/
+    ~/.zsh_local: zsh_local/
+    ~/.git_local: git_local/
+
+- shell:
+    - [git submodule update --init --remote, Updating submodules]
+
