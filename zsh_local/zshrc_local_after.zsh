@@ -1,13 +1,22 @@
 echo ">> Running ~/.zsh_local_after ..."
 
+function proxyon()
+{
+    export no_proxy=""
+    export http_proxy=""
+    export https_proxy=""
+}
+# set the above proxy accordingly and enable it
+#proxyon
+
 #alias ll='ls -ahl'
 
 #function alias
 #JAVA_HOME='' # setup java home
 
-# pin to specific version
+# pin to specific version, update this if needed
 #alias g='/usr/local/bin/git'
-#alias v='/usr/local/bin/vim'
+alias v='/usr/local/bin/vim'
 
 # company setup
 
@@ -19,6 +28,7 @@ echo ">> Running ~/.zsh_local_after ..."
 alias k='kubectl'
 alias kt='kubectl -n tumblr'
 alias kc='kubectl -n cig'
+alias ks='kubectl -n kube-system'
 
-alias dssh='ssh sli02@sli02.bf2.tumblr.net'
+alias dssh='ssh dev7-sli02-6cfd51cd.bf2.tumblr.net'
 
