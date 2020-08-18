@@ -8,12 +8,24 @@
     #     relink: false
     #     force: false
 
-    ~/.gitconfig_local: git_local/gitconfig_local
-    ~/.tmux_local: tmux_local/
-    ~/.vimrc_local: vim_local
-    ~/.bash_local: bash_local/
-    ~/.zsh_local: zsh_local/
-    ~/.git_local: git_local/
+    ~/.gitconfig_local: 
+        path: git_local/gitconfig_local
+        relink: true
+    ~/.tmux_local: 
+        path: tmux_local/
+        relink: true
+    ~/.vimrc_local: 
+        path: vim_local
+        relink: true
+    ~/.bash_local: 
+        path: bash_local/
+        relink: true
+    ~/.zsh_local: 
+        path: zsh_local/
+        relink: true
+    ~/.git_local: 
+        path: git_local/
+        relink: true
 
 - shell:
     - [git submodule update --init --remote, Updating submodules]

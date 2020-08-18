@@ -28,7 +28,9 @@ alias v='/usr/local/bin/vim'
 alias k='kubectl'
 alias kt='kubectl -n tumblr'
 alias kc='kubectl -n cig'
+alias kcd='kubectl -n content-delivery'
 alias ks='kubectl -n kube-system'
+alias ksre='kubectl -n sre-database'
 
-alias dssh='ssh dev7-sli02-6cfd51cd.bf2.tumblr.net'
+alias dssh='ssh sli02'
 
