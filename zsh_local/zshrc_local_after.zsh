@@ -32,5 +32,5 @@ alias kcd='kubectl -n content-delivery'
 alias ks='kubectl -n kube-system'
 alias ksre='kubectl -n sre-database'
 
-alias dssh='ssh sli02'
+alias dssh='ssh devvm1624.frc0.facebook.com'
 

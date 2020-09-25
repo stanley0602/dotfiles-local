@@ -15,7 +15,7 @@
         path: tmux_local/
         relink: true
     ~/.vimrc_local: 
-        path: vim_local
+        path: vim_local/vimrc_local
         relink: true
     ~/.bash_local: 
         path: bash_local/
