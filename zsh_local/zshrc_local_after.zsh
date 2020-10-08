@@ -16,7 +16,12 @@ function proxyon()
 
 # pin to specific version, update this if needed
 #alias g='/usr/local/bin/git'
-alias v='/usr/local/bin/vim'
+if [ -f '/usr/local/bin/vim' ]; then
+    alias v='/usr/local/bin/vim'
+elif [ -f '/bin/vim' ]; then
+    alias v='/bin/vim'
+fi
+
 
 # company setup
 
@@ -32,5 +37,5 @@ alias kcd='kubectl -n content-delivery'
 alias ks='kubectl -n kube-system'
 alias ksre='kubectl -n sre-database'
 
-alias dssh='ssh devvm1624.frc0.facebook.com'
+alias dssh='ssh devbox'
 

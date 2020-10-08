@@ -1,4 +1,8 @@
-# example setup
+# setup devbox domains as well as remote forwarding for clipper
+Host devbox
+    HostName: dev.exmaple.com
+    RemoteForwarda 8377 localhost:8377
+
 Host github
     User git
     Hostname github.com

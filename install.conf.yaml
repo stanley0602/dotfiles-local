@@ -26,6 +26,8 @@
     ~/.git_local: 
         path: git_local/
         relink: true
+    ~/.ssh/local_config:
+        path: ssh/config
 
 - shell:
     - [git submodule update --init --remote, Updating submodules]
