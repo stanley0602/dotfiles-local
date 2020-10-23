@@ -2,9 +2,9 @@ echo ">> Running ~/.zsh_local_after ..."
 
 function proxyon()
 {
-    export no_proxy=""
-    export http_proxy=""
-    export https_proxy=""
+    export no_proxy=".fbcdn.net,.facebook.com,.thefacebook.com,.tfbnw.net,.fb.com,.fburl.com,.facebook.net,.sb.fbsbx.com,localhost"
+    export http_proxy="http://fwdproxy:8080"
+    export https_proxy="http://fwdproxy:8080"
 }
 # set the above proxy accordingly and enable it
 #proxyon
@@ -22,7 +22,6 @@ elif [ -f '/bin/vim' ]; then
     alias v='/bin/vim'
 fi
 
-
 # company setup
 
 # 1) passwordless ssh setup
@@ -39,3 +38,8 @@ alias ksre='kubectl -n sre-database'
 
 alias dssh='ssh devbox'
 
+# make sure the rtag build (rdm/rc) is in PATH
+export PATH=$PATH:~/local/rtags-install/bin
+
+# hg aliases
+alias h='hg'

@@ -17,3 +17,42 @@ endif
 "************************************* Plugin Settings *************************************
 let g:DoxygenToolkit_authorName="stanley06 <stanleyli0602@gmail.com>"
 let g:ClipperAuto=1 " vim-clipper setting to auto forward last yanked text, should only be turned on remote dev server
+
+" fb source code indexing
+let repo_path = system('hg root')
+let repo_initial = ''
+if repo_path =~# 'configerator'
+    let repo_initial = 'c'
+elseif repo_path =~# 'www'
+    let repo_initial = 't'
+elseif repo_path =~# 'fbsource'
+    let repo_initial = 'f'
+elseif repo_path =~# 'instagram-server'
+    let repo_initial = 'ig'
+endif
+
+command! -bang -nargs=* Bg
+  \ call fzf#vim#grep(
+  \   repo_initial . 'bgs --color=on '.shellescape(<q-args>) .
+  \ '| sed "s,^[^/]*/,,"' .
+  \ '| sed "s#^#$(hg root)/#g"', 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('up:55%:hidden', '?'),
+  \   <bang>0)
+
+command! -bang -nargs=* Bf
+  \ call fzf#vim#grep(
+  \   repo_initial . 'bgf -i --color=on '.shellescape(<q-args>) .
+  \ '| sed "s,^[^/]*/,,"' .
+  \ '| sed "s#^#$(hg root)/#g"', 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('up:55%:hidden', '?'),
+  \   <bang>0)
+
+" Only override the mappings if in hg repos
+if strlen(repo_initial) >= 1
+    " <C-r><C-w>: copy and paste the word under curson
+    noremap <leader>fs :Bg <C-r><C-w><CR>
+    noremap <leader>fss :Bg 
+    noremap <leader>ff :Bf 
+endif
