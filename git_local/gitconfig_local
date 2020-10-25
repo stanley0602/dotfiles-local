@@ -1,8 +1,7 @@
 [user]
     name = stanley0602
     email = stanleyli0602@gmail.com
-#only enalbe this on the server where proxy is needed
-#[http]
-#    proxy = https://fwdproxy:8082
-#    proxySSLCert=/var/facebook/credentials/sli02/x509/sli02.pem
-#    proxySSLKey=/var/facebook/credentials/sli02/x509/sli02.pem
+[http]
+  proxy = https://fwdproxy:8082
+  proxySSLCert=/var/facebook/credentials/sli02/x509/sli02.pem
+  proxySSLKey=/var/facebook/credentials/sli02/x509/sli02.pem
