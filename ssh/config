@@ -2,3 +2,7 @@
 Host devbox
     HostName devvm1624.frc0.facebook.com
     RemoteForward 8377 localhost:8377
+
+Host bigdev
+    HostName devbig650.frc2.facebook.com
+    RemoteForward 8377 localhost:8377

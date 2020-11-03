@@ -37,6 +37,7 @@ alias ks='kubectl -n kube-system'
 alias ksre='kubectl -n sre-database'
 
 alias dssh='ssh devbox'
+alias bssh='et $USER@devbig650.frc2.facebook.com:8080 -r 8377:8377'
 
 # make sure the rtag build (rdm/rc) is in PATH
 export PATH=$PATH:~/local/rtags-install/bin
