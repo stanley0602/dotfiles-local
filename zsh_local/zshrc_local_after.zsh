@@ -3,8 +3,8 @@ echo ">> Running ~/.zsh_local_after ..."
 function proxyon()
 {
     export no_proxy=".fbcdn.net,.facebook.com,.thefacebook.com,.tfbnw.net,.fb.com,.fburl.com,.facebook.net,.sb.fbsbx.com,localhost"
-    export http_proxy="http://fwdproxy:8080"
-    export https_proxy="http://fwdproxy:8080"
+    export http_proxy="http://fwdproxy:8082"
+    export https_proxy="http://fwdproxy:8082"
 }
 # set the above proxy accordingly and enable it
 #proxyon
