@@ -31,7 +31,7 @@ elseif repo_path =~# 'instagram-server'
     let repo_initial = 'ig'
 endif
 
-command! -bang -nargs=* Bg
+command! -bang -nargs=* Bgs
   \ call fzf#vim#grep(
   \   repo_initial . 'bgs --color=on '.shellescape(<q-args>) .
   \ '| sed "s,^[^/]*/,,"' .
@@ -40,7 +40,7 @@ command! -bang -nargs=* Bg
   \           : fzf#vim#with_preview('up:55%:hidden', '?'),
   \   <bang>0)
 
-command! -bang -nargs=* Bf
+command! -bang -nargs=* Bgf
   \ call fzf#vim#grep(
   \   repo_initial . 'bgf -i --color=on '.shellescape(<q-args>) .
   \ '| sed "s,^[^/]*/,,"' .
@@ -52,7 +52,18 @@ command! -bang -nargs=* Bf
 " Only override the mappings if in hg repos
 if strlen(repo_initial) >= 1
     " <C-r><C-w>: copy and paste the word under curson
-    noremap <leader>fs :Bg <C-r><C-w><CR>
-    noremap <leader>fss :Bg 
-    noremap <leader>ff :Bf 
+    noremap <leader>fs :Bgs <C-r><C-w><CR>
+    noremap <leader>ff :Bgf <C-r><C-w><CR>
+    " search for manual input string/file
+    noremap <leader>fss :Bgs 
+    noremap <leader>fff :Bgf 
 endif
+
+" set some filetype to add syntax color
+au BufRead,BufNewFile *.cconf set filetype=python
+au BufRead,BufNewFile *.mcconf set filetype=python
+au BufRead,BufNewFile *.ccin set filetype=python
+au BufRead,BufNewFile *.tw set filetype=python
+au BufRead,BufNewFile *.thrift set filetype=thrift
+" or download from: https://github.com/apache/thrift/blob/master/contrib/thrift.vim
+au! Syntax thrift source /usr/facebook/ops/rc/vim/syntax/thrift.vim
