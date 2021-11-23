@@ -44,3 +44,10 @@ export PATH=$PATH:~/local/rtags-install/bin
 
 # hg aliases
 alias h='hg'
+
+# unicorn run
+alias unicorn='unicorn_run_locally buck-out/gen/unicorn/topaggr/top_aggregator_server --smc_tiername=unicorn.topaggr.instagram.carolina.sli02'
+
+
+# IG aliases
+alias iglogs="tail -f /var/log/distillery-server/current"
