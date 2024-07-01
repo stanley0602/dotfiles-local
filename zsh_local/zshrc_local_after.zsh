@@ -18,6 +18,8 @@ function proxyon()
 #alias g='/usr/local/bin/git'
 if [ -f '/usr/local/bin/vim' ]; then
     alias v='/usr/local/bin/vim'
+elif [ -f '/opt/homebrew/bin/vim' ]; then
+    alias v='/opt/homebrew/bin/vim'
 elif [ -f '/bin/vim' ]; then
     alias v='/bin/vim'
 fi
@@ -37,7 +39,7 @@ alias ks='kubectl -n kube-system'
 alias ksre='kubectl -n sre-database'
 
 alias dssh='ssh devbox'
-alias bssh='et $USER@devbig650.frc2.facebook.com:8080 -r 8377:8377'
+alias bssh='et $USER@devbig039.ash8.facebook.com:8080 -r 8377:8377'
 
 # make sure the rtag build (rdm/rc) is in PATH
 export PATH=$PATH:~/local/rtags-install/bin
